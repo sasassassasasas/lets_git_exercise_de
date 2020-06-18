@@ -10,7 +10,7 @@ directory = './index.md'
 def check_if_string_in_file(file_name, string_to_search):
 	f = open(file_name, 'r')
 	Lines = f.readlines() 
-	regEx = string_to_search + '([A-Z]|[a-z])+'
+	regEx = string_to_search + '([A-Z]|[a-z]|[\u00F0-\u02AF])+'
 	for line in Lines:
 		if re.match(regEx, line):
 			return True
